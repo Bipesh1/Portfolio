@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("role");
   return (
     <div className="min-h-screen bg-gray-50 font-[Poppins]">
       <header className="bg-white shadow sticky top-0 z-50">
@@ -60,8 +61,9 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-20 h-full flex flex-col justify-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Shyam Chawai</h1>
           <h2 className="text-xl md:text-3xl font-light mb-6">Regional Head – Madhesh Province</h2>
+          <h2 className="text-lg md:text-2xl font-light mb-6">Kamana Sewa Bikas Bank</h2>
           <p className="text-lg md:text-xl max-w-2xl mb-8">
-            A dedicated banker and strategic leader with over 9 years of experience in Nepal's evolving financial sector.
+            A dedicated banker and strategic leader with over 10 years of experience in Nepal's evolving financial sector.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#about" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full transition-colors text-white font-medium">
@@ -75,41 +77,253 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-1/3">
-              <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
-                <Image
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800 mb-3">About Me</h2>
+          <div className="w-20 h-1 bg-indigo-600 mx-auto rounded"></div>
+        </div>
+        
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
+          {/* Left Column with Image and Contact */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
+                <div className="absolute inset-0 bg-indigo-600 opacity-10"></div>
+                <img
                   src="/image2.jpg"
                   alt="Shyam Chawai"
-                  width={500}
-                  height={500}
-                  className="object-cover"
-                  priority
+                  className="object-cover h-full w-full"
                 />
               </div>
-            </div>
-            <div className="w-full md:w-2/3">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">About Me</h2>
-              <div className="prose text-gray-700 max-w-none">
-                <p className="mb-4">
-                  Welcome to my professional space. I'm Shyam Chawai, a dedicated banker and strategic leader with over 9 years of experience in Nepal's evolving financial sector. I currently serve as the Regional Head of Madhesh Province at Kamana Sewa Bikas Bank Ltd., where I oversee branch operations, business growth, credit mobilization, and staff development across one of Nepal's most dynamic regions.
-                </p>
-                <p>
-                  My journey in banking has spanned frontline roles, branch leadership, and regional strategy — focusing on inclusive finance, SME empowerment, and sustainable operational performance.
-                </p>
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-bold text-gray-800">Shyam Chawai</h3>
+                <p className="text-indigo-600 font-medium mt-1">Regional Head, Madhesh Province</p>
+                <p className="text-gray-600 mt-2">Kamana Sewa Bikas Bank Ltd.</p>
+                
+                <div className="mt-6 flex justify-center space-x-4">
+                  <span className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect width="4" height="12" x="2" y="9"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </span>
+                  <span className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                  </span>
+                  <span className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-200 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </span>
+                </div>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">Strategic Leadership</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Financial Management</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Team Development</span>
+                    <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">Business Growth</span>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Strategic Leadership</span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Financial Management</span>
-                <span className="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Team Development</span>
-                <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Business Growth</span>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+             
+                Experience Highlights
+              </h4>
+              <div className="space-y-4">
+                <div className="flex">
+                  <div className="flex-shrink-0 w-1 bg-indigo-200 rounded mr-4"></div>
+                  <div>
+                    <p className="font-medium text-gray-800">10+ years</p>
+                    <p className="text-sm text-gray-600">Banking sector experience</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="flex-shrink-0 w-1 bg-indigo-200 rounded mr-4"></div>
+                  <div>
+                    <p className="font-medium text-gray-800">Regional Head</p>
+                    <p className="text-sm text-gray-600">Madhesh Province</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="flex-shrink-0 w-1 bg-indigo-200 rounded mr-4"></div>
+                  <div>
+                    <p className="font-medium text-gray-800">Former President</p>
+                    <p className="text-sm text-gray-600">Kawsoti Cooperative</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          
+          {/* Right Column with Content */}
+          <div className="w-full lg:w-2/3">
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <div className="prose text-gray-700 max-w-none mb-8">
+                <p className="lead text-lg">Hello and welcome. I'm Shyam Chawai, a dedicated banker and strategic leader with over 10 years of experience in Nepal's growing financial sector. I currently work as the Regional Head of Madhesh Province at Kamana Sewa Bikas Bank Ltd., where I manage branch operations, lead business development, and guide teams to deliver strong performance across the region.</p>
+
+                <p>My career started in 2015, and since then, I've worked in various roles – from credit officer to branch manager, cluster head, and now regional head. Through every step, I've stayed focused on one goal: helping people and businesses grow through accessible, responsible, and efficient banking.</p>
+              </div>
+              
+              {/* Tabs Navigation */}
+              <div className="border-b border-gray-200 mb-6">
+                <nav className="flex space-x-8">
+                  <button
+                    onClick={() => setActiveTab("role")}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
+                      activeTab === "role" 
+                        ? "border-indigo-600 text-indigo-600" 
+                        : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                    }`}
+                  >
+                    My Role
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("values")}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
+                      activeTab === "values" 
+                        ? "border-indigo-600 text-indigo-600" 
+                        : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                    }`}
+                  >
+                    What I Value
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("community")}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
+                      activeTab === "community" 
+                        ? "border-indigo-600 text-indigo-600" 
+                        : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                    }`}
+                  >
+
+                    Community
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("future")}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
+                      activeTab === "future" 
+                        ? "border-indigo-600 text-indigo-600" 
+                        : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                    }`}
+                  >
+                    Looking Ahead
+                  </button>
+                </nav>
+              </div>
+              
+              {/* Tab Content */}
+              <div className="tab-content text-black">
+                {activeTab === "role" && (
+                  <div className="animate-fadeIn">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">My Role</h3>
+                    <p className="mb-4">In my current position, I lead multiple branches across Madhesh Province. My responsibilities include:</p>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Growing deposits and quality loan portfolios</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Supporting small and medium-sized businesses (SMEs)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Developing staff skills and leadership</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Ensuring compliance and smooth operations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Promoting financial literacy and digital banking</span>
+                      </li>
+                    </ul>
+                    <p>I regularly visit branches, hold team meetings, and work closely with branch managers to set goals, solve problems, and improve customer service. I believe in teamwork, planning, and practical decision-making.</p>
+                  </div>
+                )}
+                
+                {activeTab === "values" && (
+                  <div className="animate-fadeIn">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">What I Value</h3>
+                    <p className="mb-4">I believe banking is more than just numbers – it's about trust, service, and impact. I value:</p>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Integrity in every decision</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Responsibility toward customers and community</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Growth through learning, innovation, and smart strategy</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 mt-1 text-indigo-600">•</span>
+                        <span>Team spirit that brings out the best in people</span>
+                      </li>
+                    </ul>
+                    <p>I've built strong relationships with colleagues, clients, and community members, and I take pride in helping others succeed.</p>
+                  </div>
+                )}
+                
+                {activeTab === "community" && (
+                  <div className="animate-fadeIn">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Community & Leadership</h3>
+                    <p>Outside my job, I stay active in social work. I'm a former President of Kawsoti Cooperative, and I work closely with community organizations and Rotary Nepal. I support youth development, cooperative growth, and financial awareness programs that reach underserved populations.</p>
+                    
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="bg-indigo-50 rounded-lg p-4">
+                        <h4 className="font-medium text-indigo-800">Youth Development</h4>
+                        <p className="text-sm text-gray-700">Supporting educational initiatives and leadership programs</p>
+                      </div>
+                      <div className="bg-indigo-50 rounded-lg p-4">
+                        <h4 className="font-medium text-indigo-800">Financial Literacy</h4>
+                        <p className="text-sm text-gray-700">Conducting workshops to improve financial awareness</p>
+                      </div>
+                      <div className="bg-indigo-50 rounded-lg p-4">
+                        <h4 className="font-medium text-indigo-800">Cooperative Movement</h4>
+                        <p className="text-sm text-gray-700">Strengthening local cooperative institutions</p>
+                      </div>
+                      <div className="bg-indigo-50 rounded-lg p-4">
+                        <h4 className="font-medium text-indigo-800">Rotary Projects</h4>
+                        <p className="text-sm text-gray-700">Participating in community service initiatives</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                {activeTab === "future" && (
+                  <div className="animate-fadeIn">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Looking Ahead</h3>
+                    <p>My goal is to keep learning, leading, and contributing to a stronger banking system in Nepal. I aim to support innovation in rural finance, promote SME development, and create opportunities for people through ethical and inclusive banking.</p>
+                    
+                    <div className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6">
+                      <h4 className="font-semibold text-gray-800 mb-2">Vision for the Future</h4>
+                      <p className="text-gray-700">I envision a financial ecosystem where banking services are accessible to all Nepalese citizens, where technology bridges gaps in service delivery, and where financial institutions actively partner with communities to create sustainable growth opportunities.</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-gradient-to-b from-gray-100 to-white">
@@ -262,10 +476,16 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Personal Life</h2>
               <div className="prose text-gray-700 max-w-none">
                 <p className="mb-4">
-                  I live in Kawasoti-08, Nawalparasi, with my wife Nisha Bhusal and our two wonderful children, Shreeyansi Subedi and Sirjan Subedi. I value a life balanced between professional achievement, community service, and family happiness.
+                I live in Kawasoti-08, Nawalparasi, with my wife Nisha Bhusal and our two wonderful children, Shreeyansi Subedi and Sirjan Subedi. Family is the heart of my life, and I believe in maintaining a healthy balance between my professional responsibilities and personal happiness.
+
+Outside of work, 
                 </p>
                 <p className="mb-6">
-                  I enjoy travel, cultural exchange, and staying connected with social development efforts.
+                I enjoy traveling, experiencing new cultures, and learning from people of different backgrounds. I strongly believe that travel not only refreshes the mind but also broadens perspectives — something that’s valuable in both leadership and life.
+
+I’m also actively involved in community service and social development, supporting efforts that promote education, financial literacy, and local empowerment. Being part of organizations like Rotary has given me the opportunity to contribute to causes beyond the workplace.
+
+In my free time, I like spending quality time with my family, exploring nature, and reflecting on ways to give back to the society that has helped shape who I am today. Whether at home or in the community, I believe in kindness, simplicity, and steady progress.
                 </p>
                 <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-600">
                   <h4 className="font-semibold text-indigo-800 mb-2">International Exposure</h4>
