@@ -93,7 +93,7 @@ export default function Home() {
                 <img
                   src="/image2.jpg"
                   alt="Shyam Chawai"
-                  className="object-cover h-full w-full"
+                  className="object-contain h-full w-full"
                 />
               </div>
               <div className="p-6 text-center">
@@ -464,9 +464,9 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/image1.jpg"
+                  src="/image4.jpg"
                   alt="Family"
-                  width={600}
+                  width={700}
                   height={600}
                   className="object-cover"
                 />
